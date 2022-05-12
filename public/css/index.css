@@ -1,0 +1,89 @@
+/* Importando font pirata */
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+
+/* Estilizando TAGS - INICIO*/
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: 'Pirata One', cursive;
+    color: white;
+}
+
+body {
+    background: black;
+}
+
+/* Estilizando TAGS - FIM*/
+
+/* Conteudo ao entrar no site - INICIO */
+#fig_inicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    height: 100vh;
+    width: 65vw;
+    row-gap: 3em;
+    transition: 2s;
+    user-select: none;
+}
+
+#img_logoShanks {
+    width: 100%;
+    transition: 2s;
+}
+
+
+/* Efeito de pulsação */
+.pulse {
+    animation: pulse 2s infinite;
+    margin: 0;
+    display: table;
+    animation-direction: alternate;
+    animation-name: pulse;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 6em 5px #6B0000, inset 0 0 20vw 5px #6B0000;
+        filter: brightness(20%);
+    }
+
+    100% {
+        box-shadow: 0 0 13em 10px #ff0000, inset 0 0 40vw 5px #ff0000;
+        filter: brightness(100%);
+    }
+}
+
+#figC_message {
+    color: white;
+    font-size: 20px;
+    transition: 2s;
+    box-shadow: none !important;
+}
+
+/* Conteudo ao entrar no site - FIM */
+
+/* Conteudo 1 - INICIO */
+
+#content_1 {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+    height: 100vh;
+    width: 65vw;
+    row-gap: 3em;
+    transition: 2s;
+    user-select: none;
+    opacity: 0;
+}
+
+#content_1 span {
+    font-size: 25px;
+}
+
+/* Conteudo 1 - FIM */
