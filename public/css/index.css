@@ -35,14 +35,13 @@ body {
     transition: 2s;
 }
 
-
 /* Efeito de pulsação */
 .pulse {
     animation: pulse 2s infinite;
-    margin: 0;
     display: table;
     animation-direction: alternate;
     animation-name: pulse;
+    z-index: 1;
 }
 
 @keyframes pulse {
@@ -64,9 +63,32 @@ body {
     box-shadow: none !important;
 }
 
+#particles-container {
+    position: absolute;
+    top: 68%;
+    height: 25%;
+    width: 100%;
+}
+
+.pulseParticle {
+    animation: pulse 2s infinite;
+    animation-direction: alternate;
+    animation-name: pulseParticle;
+}
+
+@keyframes pulseParticle {
+    0% {
+        filter: brightness(20%);
+    }
+
+    100% {
+        filter: brightness(100%);
+    }
+}
+
 /* Conteudo ao entrar no site - FIM */
 
-/* Conteudo 1 - INICIO */
+/* Conteudo 1 (Narração) - INICIO */
 
 #content_1 {
     display: none;
@@ -86,4 +108,4 @@ body {
     font-size: 25px;
 }
 
-/* Conteudo 1 - FIM */
+/* Conteudo 1 (Narração) - FIM */

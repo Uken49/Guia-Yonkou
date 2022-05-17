@@ -3,6 +3,9 @@ var content = document.getElementById('content_1')
 
 // INICIO - Primeiro conteúdo (Imagem e narração)
 
+// Particulas utilizando a biblioteca: https://vincentgarreau.com/particles.js/
+particlesJS.load('particles-container', 'particlesjs-config.json');
+
 // Desaparencendo a imagem
 function toMenu() {
     let logo = document.getElementById('fig_inicio')
@@ -32,8 +35,10 @@ const timer = (seconds) => {
 // Exibindo a narração
 async function narrative() {
     let storyteller = document.getElementById('span_storyteller')
-    let phrase = [`Testando`, `Testando de novo`, `Demora né?`, `Legal essa fonte, né?`, `Estamos aqui à tanto tempo`
-                    ,`Testando`, `Me prepare um café`, `Em breve...os Yonkous irão surgir`]
+    let phrase = ['Lendas, lendas', 'Vagam pelo mar', 'Irão se assustar', 'Frente a um Yonkou',
+        'Lendas, lendas', 'Sempre a navegar', 'Caso os encontrar', 'Saiba sua vida acabou',
+        'Boatos sobre esses seres', 'Saiba se espalhou', 'Governando suas ilhas', 'São os',
+        'Yonkous']
 
     for (let i = 0; i < phrase.length; i++) {
         let seconds = i == 0 ? 0.3 : 2
@@ -41,11 +46,11 @@ async function narrative() {
         await timer(seconds);
         content.style.opacity = "1"
         storyteller.innerHTML = phrase[i]
-        await timer(4);
+        await timer(3);
         content.style.opacity = "0"
     }
 
-    //Próximo passo
+    //Próximo passo a fazer
 }
 
 // FIM - Primeiro conteúdo (Imagem e narração)
