@@ -6,17 +6,26 @@
     margin: 0;
     padding: 0;
     border: 0;
+    list-style-type: none;
     font-family: 'Pirata One', cursive;
-    color: white;
+    color: #ffffff;
+    /* Variáveis */
+    --header-height: 90px;
+    --color-red: #ff0000;
+}
+
+a {
+    text-decoration: none;
 }
 
 body {
-    background: black;
+    background: #000000;
+    transition: 2s;
 }
 
 /* Estilizando TAGS - FIM*/
 
-/* Conteudo ao entrar no site - INICIO */
+/* Conteúdo ao entrar no site - INICIO */
 #fig_inicio {
     display: flex;
     justify-content: center;
@@ -36,7 +45,7 @@ body {
 }
 
 /* Efeito de pulsação */
-.pulse {
+/* .pulse {
     animation: pulse 2s infinite;
     display: table;
     animation-direction: alternate;
@@ -51,13 +60,13 @@ body {
     }
 
     100% {
-        box-shadow: 0 0 13em 10px #ff0000, inset 0 0 40vw 5px #ff0000;
+        box-shadow: 0 0 13em 10px var(--color-red), inset 0 0 40vw 5px var(--color-red);
         filter: brightness(100%);
     }
-}
+} */
 
 #figC_message {
-    color: white;
+    color: #ffffff;
     font-size: 20px;
     transition: 2s;
     box-shadow: none !important;
@@ -86,9 +95,9 @@ body {
     }
 }
 
-/* Conteudo ao entrar no site - FIM */
+/* Conteúdo ao entrar no site - FIM */
 
-/* Conteudo 1 (Narração) - INICIO */
+/* Conteúdo 1 (Narração) - INICIO */
 
 #content_1 {
     display: none;
@@ -109,3 +118,76 @@ body {
 }
 
 /* Conteudo 1 (Narração) - FIM */
+
+
+
+/* Conteúdo 2 (Parte padrão) - INICIO */
+
+/* Header (barra de navegação) - INICIO */
+#header {
+    visibility: hidden;
+    position: fixed;
+    height: 90px;
+    width: 100%;
+    background: linear-gradient(90deg, #850000, #6B0000, #220101de);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+    opacity: 0;
+    transition: 2s;
+}
+
+#header img {
+    height: 80%;
+    padding: 0 0 0 40px;
+}
+
+#header nav {
+    padding: 0 40px 0 0;
+}
+
+#header nav ul {
+    display: flex;
+    gap: 20px;
+    font-size: 20px;
+    text-shadow: 2px 2px 2px var(--color-red);
+}
+
+#header nav ul li a:hover {
+    color: var(--color-red);
+    text-shadow: 0 0 0 transparent;
+    transition: 250ms ease-in-out;
+}
+
+/* Header (barra de navegação) - FIM */
+
+
+/* INICIO - Carrosel (carrosel com as imagens) */
+#content_2 {
+    visibility: hidden;
+    opacity: 0;
+    transition: 2s;
+}
+
+.carousel {
+    position: absolute;
+    top: var(--header-height);
+    height: calc(80% - var(--header-height));
+    width: 100%;
+    background-color: #da9444;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    height: 30px;
+}
+
+.next {
+    left: 95%;
+}
+
+/* FIM - Carrosel (carrosel com as imagens) */
+
+/* Conteúdo 2 (Parte padrão) - INICIO */
