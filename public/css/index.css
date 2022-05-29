@@ -18,34 +18,49 @@ a {
     text-decoration: none;
 }
 
-body {
-    background: #000000;
-    transition: 2s;
-}
-
 /* Estilizando TAGS - FIM*/
 
 /* Conteúdo ao entrar no site - INICIO */
-#fig_inicio {
+#content_1 {
+    height: 100vh;
+    width: 100vw;
+    transition: 2s;
+    background: #000;
+}
+
+#fig_logo {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     margin: auto;
-    height: 100vh;
-    width: 65vw;
+    height: 100%;
+    width: 100%;
     row-gap: 3em;
     transition: 2s;
     user-select: none;
 }
 
-#img_logoShanks {
-    width: 100%;
+#fig_logo img {
+    width: 65%;
     transition: 2s;
 }
 
+#fig_logo figcaption {
+    font-size: 20px;
+    transition: 2s;
+    box-shadow: none !important;
+}
+
+#fig_logo div {
+    position: absolute;
+    top: 68%;
+    height: 25%;
+    width: 100%;
+}
+
 /* Efeito de pulsação */
-/* .pulse {
+.pulse {
     animation: pulse 2s infinite;
     display: table;
     animation-direction: alternate;
@@ -63,21 +78,8 @@ body {
         box-shadow: 0 0 13em 10px var(--color-red), inset 0 0 40vw 5px var(--color-red);
         filter: brightness(100%);
     }
-} */
-
-#figC_message {
-    color: #ffffff;
-    font-size: 20px;
-    transition: 2s;
-    box-shadow: none !important;
 }
 
-#particles-container {
-    position: absolute;
-    top: 68%;
-    height: 25%;
-    width: 100%;
-}
 
 .pulseParticle {
     animation: pulse 2s infinite;
@@ -99,7 +101,7 @@ body {
 
 /* Conteúdo 1 (Narração) - INICIO */
 
-#content_1 {
+#art_storyteller {
     display: none;
     justify-content: center;
     align-items: center;
@@ -113,7 +115,7 @@ body {
     opacity: 0;
 }
 
-#content_1 span {
+#art_storyteller span {
     font-size: 25px;
 }
 
