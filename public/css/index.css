@@ -9,6 +9,7 @@
     list-style-type: none;
     font-family: 'Pirata One', cursive;
     color: #ffffff;
+    box-sizing: border-box;
     /* Variáveis */
     --header-height: 90px;
     --color-red: #ff0000;
@@ -18,11 +19,11 @@ a {
     text-decoration: none;
 }
 
-body{
+body {
     background: #000;
 }
 
-main{
+main {
     padding: var(--header-height) 0 0 0;
 }
 
@@ -139,6 +140,7 @@ main{
     align-items: center;
     justify-content: space-between;
     user-select: none;
+    z-index: 1;
 }
 
 #header img {
@@ -166,27 +168,71 @@ main{
 /* Header (barra de navegação) - FIM */
 
 /* INICIO - Carrosel (carrosel com as imagens) */
-#content-2 {}
-
-.carousel {
-    top: var(--header-height);
-    height: 80vh;
+.box-carousel {
+    position: relative;
+    box-shadow: 2px 2px 4px #000;
+    overflow: hidden;
+    height: 60vh;
+    margin: auto;
     width: 100%;
-    background-color: #da9444;
+    background: #220101;
+}
+
+#carousel {
+    height: 100%;
+    display: flex;
+    transition: transform 500ms ease-in-out;
+    transform: translateX(0);
+}
+
+#carousel img {
+    object-fit: cover;
+    width: 500px;
+}
+
+#btn-carousel {
+    position: absolute;
+    top: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+.btn-span{
+    height: 30px;
+    width: 30px;
+    background-color: #fff;
+    border: 3px solid #000;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.active{
+    background: #ca1616 !important;
 }
 
 /* FIM - Carrosel (carrosel com as imagens) */
 
+/* Sobre one piece - INICIO */
+#about {
+    background-color: #220101;
+    margin: 20px 0;
+    padding: 20px;
+}
+
+/* Sobre one piece - FIM */
 
 /* Rodapé - INICIO */
 #footer {
+    padding: 20px 0 0 0;
     display: flex;
     justify-content: space-around;
     background: linear-gradient(90deg, #850000, #6B0000, #220101);
 }
 
-#footer ul{
+#footer ul {
     display: flex;
+    gap: 20px;
 }
 
 /* Rodapé - FIM */
