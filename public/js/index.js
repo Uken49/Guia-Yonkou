@@ -3,35 +3,47 @@ var body = document.getElementsByTagName("body")[0]
 
 // Parte de narração
 var cookie = localStorage.getItem("storyteller")
-var inicio = document.getElementById('content_1')
-var logoStory = document.getElementById('fig_logo')
+var inicio = document.getElementById('content-1')
+var logoStory = document.getElementById('fig-logo')
 
 // Parte "normal" do site
 var header = document.getElementById("header")
-var content2 = document.getElementById("content_2")
+var footer = document.getElementById("footer")
+var content2 = document.getElementById("content-2")
 
-body.addEventListener('load', checkCookie)
-inicio.addEventListener('click', toMenu)
-var content1start = document.getElementById('art_storyteller')
+var content1start = document.getElementById('art-storyteller')
 
 
 function checkCookie() {
     // Verificando cookie
     if (cookie) {
+        inicio.style.transition = "0"
+
         inicio.parentNode.removeChild(inicio)
         content1start.parentNode.removeChild(content1start)
-        header.style.visibility = "visible"
-        content2.style.visibility = "visible"
-
-        header.style.opacity = "1"
-        content2.style.opacity = "1"
+        return
     }
+    inicio.addEventListener('click', toMenu)
+
+    body.style.overflow = "hidden"
+    header.style.visibility = "hidden"
+    content2.style.visibility = "hidden"
+
+    header.style.opacity = "0"
+    content2.style.opacity = "0"
+
+    setTimeout(() => {
+        header.style.transition = "2s"
+        content2.style.transition = "2s"
+        footer.style.transition = "2s"
+        body.style.transition = "2s"
+    }, 2500);
+
+    // Particulas utilizando a biblioteca: https://vincentgarreau.com/particles.js/
+    particlesJS.load('particles-container', 'particlesjs-config.json');
 }
 
 // INICIO - Primeiro conteúdo (Imagem e narração)
-
-// Particulas utilizando a biblioteca: https://vincentgarreau.com/particles.js/
-particlesJS.load('particles-container', 'particlesjs-config.json');
 
 // Desaparencendo a imagem
 function toMenu() {
@@ -60,7 +72,7 @@ const timer = (seconds) => {
 
 // Exibindo a narração
 async function narrative() {
-    let storyteller = document.getElementById('span_storyteller')
+    let storyteller = document.getElementById('span-storyteller')
     let phrase = [
         // 'Lendas, lendas', 'Vagam pelo mar', 'Irão se assustar', 'Frente a um Yonkou',
         // 'Lendas, lendas', 'Sempre a navegar', 'Caso os encontrar', 'Saiba sua vida acabou',
@@ -80,22 +92,29 @@ async function narrative() {
     // Tirando conteúdo 1 e surgindo conteúdo 2
     setTimeout(() => {
         var header = document.getElementById("header")
-        var content2 = document.getElementById("content_2")
+        var content2 = document.getElementById("content-2")
 
         // Sumindo com a narração 
         inicio.style.opacity = "0"
-        setTimeout(() => { inicio.parentNode.removeChild(inicio); }, 2000);
+        inicio.parentNode.removeChild(inicio)
 
         // Aparecendo o site
+        body.style.overflow = "auto"
         header.style.visibility = "visible"
         content2.style.visibility = "visible"
 
         header.style.opacity = "1"
         content2.style.opacity = "1"
 
+        setTimeout(() => {
+            header.style.transition = "0"
+            content2.style.transition = "0"
+            footer.style.transition = "0"
+            body.style.transition = "0"
+        }, 2000);
+
         // Cria o cookie
         localStorage.setItem("storyteller", "1")
-
     }, 2000);
 
 }

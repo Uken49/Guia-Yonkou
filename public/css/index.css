@@ -18,17 +18,25 @@ a {
     text-decoration: none;
 }
 
+body{
+    background: #000;
+}
+
+main{
+    padding: var(--header-height) 0 0 0;
+}
+
 /* Estilizando TAGS - FIM*/
 
 /* Conteúdo ao entrar no site - INICIO */
-#content_1 {
+#content-1 {
     height: 100vh;
     width: 100vw;
     transition: 2s;
     background: #000;
 }
 
-#fig_logo {
+#fig-logo {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,18 +49,18 @@ a {
     user-select: none;
 }
 
-#fig_logo img {
+#fig-logo img {
     width: 65%;
     transition: 2s;
 }
 
-#fig_logo figcaption {
+#fig-logo figcaption {
     font-size: 20px;
     transition: 2s;
     box-shadow: none !important;
 }
 
-#fig_logo div {
+#fig-logo div {
     position: absolute;
     top: 68%;
     height: 25%;
@@ -80,7 +88,6 @@ a {
     }
 }
 
-
 .pulseParticle {
     animation: pulse 2s infinite;
     animation-direction: alternate;
@@ -101,7 +108,7 @@ a {
 
 /* Conteúdo 1 (Narração) - INICIO */
 
-#art_storyteller {
+#art-storyteller {
     display: none;
     justify-content: center;
     align-items: center;
@@ -115,29 +122,23 @@ a {
     opacity: 0;
 }
 
-#art_storyteller span {
+#art-storyteller span {
     font-size: 25px;
 }
 
 /* Conteudo 1 (Narração) - FIM */
 
-
-
-/* Conteúdo 2 (Parte padrão) - INICIO */
-
+/* Conteúdo 2 (Parte padrão) */
 /* Header (barra de navegação) - INICIO */
 #header {
-    visibility: hidden;
     position: fixed;
     height: 90px;
     width: 100%;
-    background: linear-gradient(90deg, #850000, #6B0000, #220101de);
+    background: linear-gradient(90deg, #850000, #6B0000, #220101);
     display: flex;
     align-items: center;
     justify-content: space-between;
     user-select: none;
-    opacity: 0;
-    transition: 2s;
 }
 
 #header img {
@@ -164,32 +165,28 @@ a {
 
 /* Header (barra de navegação) - FIM */
 
-
 /* INICIO - Carrosel (carrosel com as imagens) */
-#content_2 {
-    visibility: hidden;
-    opacity: 0;
-    transition: 2s;
-}
+#content-2 {}
 
 .carousel {
-    position: absolute;
     top: var(--header-height);
-    height: calc(80% - var(--header-height));
+    height: 80vh;
     width: 100%;
     background-color: #da9444;
 }
 
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    height: 30px;
-}
-
-.next {
-    left: 95%;
-}
-
 /* FIM - Carrosel (carrosel com as imagens) */
 
-/* Conteúdo 2 (Parte padrão) - INICIO */
+
+/* Rodapé - INICIO */
+#footer {
+    display: flex;
+    justify-content: space-around;
+    background: linear-gradient(90deg, #850000, #6B0000, #220101);
+}
+
+#footer ul{
+    display: flex;
+}
+
+/* Rodapé - FIM */
