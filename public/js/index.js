@@ -1,17 +1,17 @@
 // Criando sessão para sumir com narrativa após primeira visualização
-var body = document.getElementsByTagName("body")[0]
+const body = document.getElementsByTagName("body")[0]
 
 // Parte de narração
-var cookie = localStorage.getItem("storyteller")
-var inicio = document.getElementById('content-1')
-var logoStory = document.getElementById('fig-logo')
+const cookie = localStorage.getItem("storyteller")
+const inicio = document.getElementById('content-1')
+const logoStory = document.getElementById('fig-logo')
 
 // Parte "normal" do site
-var header = document.getElementById("header")
-var footer = document.getElementById("footer")
-var content2 = document.getElementById("content-2")
+const header = document.getElementById("header")
+const footer = document.getElementById("footer")
+const content2 = document.getElementById("content-2")
 
-var content1start = document.getElementById('art-storyteller')
+const content1start = document.getElementById('art-storyteller')
 
 
 function checkCookie() {
@@ -66,14 +66,14 @@ function content1() {
 
 // Criando delay pra narração
 const timer = (seconds) => {
-    let time = seconds * 1000
+    const time = seconds * 1000
     return new Promise(res => setTimeout(res, time))
 }
 
 // Exibindo a narração
 async function narrative() {
-    let storyteller = document.getElementById('span-storyteller')
-    let phrase = [
+    const storyteller = document.getElementById('span-storyteller')
+    const phrase = [
         // 'Lendas, lendas', 'Vagam pelo mar', 'Irão se assustar', 'Frente a um Yonkou',
         // 'Lendas, lendas', 'Sempre a navegar', 'Caso os encontrar', 'Saiba sua vida acabou',
         // 'Boatos sobre esses seres', 'Saiba se espalhou', 'Governando suas ilhas', 'São os...',
@@ -91,8 +91,6 @@ async function narrative() {
 
     // Tirando conteúdo 1 e surgindo conteúdo 2
     setTimeout(() => {
-        var header = document.getElementById("header")
-        var content2 = document.getElementById("content-2")
 
         // Sumindo com a narração 
         inicio.style.opacity = "0"
@@ -142,25 +140,25 @@ function carousel() {
         document.getElementsByClassName("btn-span")[2].classList.remove('active')
         document.getElementsByClassName("btn-span")[3].classList.remove('active')
         document.getElementsByClassName("btn-span")[4].classList.remove('active')
-    }else if (idx == 1) {
+    } else if (idx == 1) {
         document.getElementsByClassName("btn-span")[0].classList.remove('active')
         document.getElementsByClassName("btn-span")[1].classList.add('active')
         document.getElementsByClassName("btn-span")[2].classList.remove('active')
         document.getElementsByClassName("btn-span")[3].classList.remove('active')
         document.getElementsByClassName("btn-span")[4].classList.remove('active')
-    }else if (idx == 2) {
+    } else if (idx == 2) {
         document.getElementsByClassName("btn-span")[0].classList.remove('active')
         document.getElementsByClassName("btn-span")[1].classList.remove('active')
         document.getElementsByClassName("btn-span")[2].classList.add('active')
         document.getElementsByClassName("btn-span")[3].classList.remove('active')
         document.getElementsByClassName("btn-span")[4].classList.remove('active')
-    }else if (idx == 3) {
+    } else if (idx == 3) {
         document.getElementsByClassName("btn-span")[0].classList.remove('active')
         document.getElementsByClassName("btn-span")[1].classList.remove('active')
         document.getElementsByClassName("btn-span")[2].classList.remove('active')
         document.getElementsByClassName("btn-span")[3].classList.add('active')
         document.getElementsByClassName("btn-span")[4].classList.remove('active')
-    }else{
+    } else {
         document.getElementsByClassName("btn-span")[0].classList.remove('active')
         document.getElementsByClassName("btn-span")[1].classList.remove('active')
         document.getElementsByClassName("btn-span")[2].classList.remove('active')
@@ -168,5 +166,16 @@ function carousel() {
         document.getElementsByClassName("btn-span")[4].classList.add('active')
     }
 }
-
 setInterval(carousel, 2000)
+
+// Função para detectar o local do menu que foi clicado
+const list = document.querySelectorAll('.btn-span')
+
+function activeLink() {
+    list.forEach((item) =>
+        item.classList.remove('active'))
+    this.classList.add('active')
+    carousel()
+}
+list.forEach((item) =>
+    item.addEventListener('click', activeLink))
