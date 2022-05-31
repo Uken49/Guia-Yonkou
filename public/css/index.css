@@ -198,7 +198,8 @@ main {
     justify-content: center;
     gap: 40px;
 }
-.btn-span{
+
+.btn-span {
     height: 30px;
     width: 30px;
     background-color: #fff;
@@ -207,17 +208,43 @@ main {
     cursor: pointer;
 }
 
-.active{
+.active {
     background: #ca1616 !important;
 }
 
 /* FIM - Carrosel (carrosel com as imagens) */
 
 /* Sobre one piece - INICIO */
-#about {
+.about {
     background-color: #220101;
     margin: 20px 0;
-    padding: 20px;
+    padding: 20px 40px;
+}
+
+.about h2 {
+    text-align: center;
+}
+
+.art-about {
+    display: flex;
+    justify-content: space-between;
+}
+
+.art-about div {
+    width: 55%;
+}
+
+.art-about p {
+    margin: 20px 0 0 0;
+    font-size: 17px;
+    text-indent: 20px;
+}
+
+.art-about img {
+    height: 400px;
+}
+.art-about figcaption {
+    padding: 0 0 0 20px;
 }
 
 /* Sobre one piece - FIM */
