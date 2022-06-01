@@ -119,63 +119,6 @@ async function narrative() {
 
 // FIM - Primeiro conteúdo (Imagem e narração)
 
-// INICIO - Container
-const imgs = document.getElementById("carousel")
-const img = document.querySelectorAll("#carousel img")
+// INICIO - Slider
 
-let idx = 0
-
-function carousel() {
-    idx++;
-
-    if (idx > img.length - 1) {
-        idx = 0
-    }
-    imgs.style.transform = `translateX(${(-idx * 500)}px)`
-
-
-    if (idx == 0) {
-        document.getElementsByClassName("btn-span")[0].classList.add('active')
-        document.getElementsByClassName("btn-span")[1].classList.remove('active')
-        document.getElementsByClassName("btn-span")[2].classList.remove('active')
-        document.getElementsByClassName("btn-span")[3].classList.remove('active')
-        document.getElementsByClassName("btn-span")[4].classList.remove('active')
-    } else if (idx == 1) {
-        document.getElementsByClassName("btn-span")[0].classList.remove('active')
-        document.getElementsByClassName("btn-span")[1].classList.add('active')
-        document.getElementsByClassName("btn-span")[2].classList.remove('active')
-        document.getElementsByClassName("btn-span")[3].classList.remove('active')
-        document.getElementsByClassName("btn-span")[4].classList.remove('active')
-    } else if (idx == 2) {
-        document.getElementsByClassName("btn-span")[0].classList.remove('active')
-        document.getElementsByClassName("btn-span")[1].classList.remove('active')
-        document.getElementsByClassName("btn-span")[2].classList.add('active')
-        document.getElementsByClassName("btn-span")[3].classList.remove('active')
-        document.getElementsByClassName("btn-span")[4].classList.remove('active')
-    } else if (idx == 3) {
-        document.getElementsByClassName("btn-span")[0].classList.remove('active')
-        document.getElementsByClassName("btn-span")[1].classList.remove('active')
-        document.getElementsByClassName("btn-span")[2].classList.remove('active')
-        document.getElementsByClassName("btn-span")[3].classList.add('active')
-        document.getElementsByClassName("btn-span")[4].classList.remove('active')
-    } else {
-        document.getElementsByClassName("btn-span")[0].classList.remove('active')
-        document.getElementsByClassName("btn-span")[1].classList.remove('active')
-        document.getElementsByClassName("btn-span")[2].classList.remove('active')
-        document.getElementsByClassName("btn-span")[3].classList.remove('active')
-        document.getElementsByClassName("btn-span")[4].classList.add('active')
-    }
-}
-setInterval(carousel, 2000)
-
-// Função para detectar o local do menu que foi clicado
-const list = document.querySelectorAll('.btn-span')
-
-function activeLink() {
-    list.forEach((item) =>
-        item.classList.remove('active'))
-    this.classList.add('active')
-    carousel()
-}
-list.forEach((item) =>
-    item.addEventListener('click', activeLink))
+// FIM - Slider

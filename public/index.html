@@ -45,34 +45,56 @@
 
     <!-- Conteúdo principal do site -->
     <main id="content-2">
+
         <!-- Container com imagens -->
-        <section class="box-carousel">
-            <!-- Imagens -->
-            <div id="carousel">
-                <div>
-                    <img src="img/personagem/barba_branca.webp" alt="Barba Branca">
-                </div>
-                <div>
-                    <img src="img/personagem/barba_negra.webp" alt="Barba Negra">
-                </div>
-                <div>
-                    <img src="img/personagem/big_mom.png" alt="Big Mom">
-                </div>
-                <div>
-                    <img src="img/personagem/kaido.png" alt="Kaido">
-                </div>
-                <div>
-                    <img src="img/personagem/shanks.png" alt="Shanks">
-                </div>
-            </div>
+        <section class="slider">
             <!-- Botões de seleção -->
-            <div id="btn-carousel">
-                <span class="btn-span active"></span>
-                <span class="btn-span"></span>
-                <span class="btn-span"></span>
-                <span class="btn-span"></span>
-                <span class="btn-span"></span>
+            <div class="slides">
+                <input type="radio" name="radio-btn" id="radio1">
+                <input type="radio" name="radio-btn" id="radio2">
+                <input type="radio" name="radio-btn" id="radio3">
+                <input type="radio" name="radio-btn" id="radio4">
+                <input type="radio" name="radio-btn" id="radio5">
+
+                <!-- Slide images -->
+                <figure class="slide first">
+                    <img src="img/personagem/barba_branca.webp" alt="Barba Branca">
+                    <figcaption>Barba Branca, O homem mais forte do mundo</figcaption>
+                </figure>
+                <figure class="slide">
+                    <img src="img/personagem/barba_negra.webp" alt="Barba Negra">
+                    <figcaption>Barba Negra, O homem com duas frutas do diabo</figcaption>
+                </figure>
+                <figure class="slide">
+                    <img src="img/personagem/big_mom.png" alt="Big Mom">
+                    <figcaption>Big Mom, A sua mãe</figcaption>
+                </figure>
+                <figure class="slide">
+                    <img src="img/personagem/kaido.png" alt="Kaido">
+                    <figcaption>Kaidou, A criatura mais forte do mundo</figcaption>
+                </figure>
+                <figure class="slide">
+                    <img src="img/personagem/shanks.png" alt="Shanks">
+                    <figcaption>Shanks, O ruivo</figcaption>
+                </figure>
+
+                <div class="navigation-auto">
+                    <div class="auto-btn1"></div>
+                    <div class="auto-btn2"></div>
+                    <div class="auto-btn3"></div>
+                    <div class="auto-btn4"></div>
+                    <div class="auto-btn5"></div>
+                </div>
             </div>
+
+            <div class="manual-navigation">
+                <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label>
+                <label for="radio3" class="manual-btn"></label>
+                <label for="radio4" class="manual-btn"></label>
+                <label for="radio5" class="manual-btn"></label>
+            </div>
+
         </section>
 
         <!-- Sobre one piece -->
