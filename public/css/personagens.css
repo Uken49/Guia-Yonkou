@@ -1,0 +1,71 @@
+/* Seleção de personagens */
+.select-character{
+    height: 10vh;
+    width: 60%;
+    margin: 10vh auto;
+    display: flex;
+    justify-content: space-around;
+    background-color: #cc862b;
+}
+
+.select-character div{
+    height: 100%;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    cursor: pointer;
+    border: 1px solid #000;
+}
+
+.barba-negra {
+    color: #000000;
+    background-color: #cc862b;
+}
+
+.big-mom {
+    color: #d40b91;
+}
+
+.kaido {
+    color: #0b1625;
+}
+
+.shanks {
+    color: #e00606;
+}
+
+/* Biografia do personagem */
+.bio{
+    width: 90%;
+    margin: auto;
+    background-color: #cc862b;
+}
+
+.bio h2{
+    text-align: center;
+    margin: 40px 0;
+}
+
+.bio p{
+    font-size: 20px;
+    width: 47%;
+    text-indent: 20px;
+}
+
+.content{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.content div{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.char{
+    height: 300px;
+}
