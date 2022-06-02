@@ -117,7 +117,7 @@ h2 {
 
 .slides {
     width: 400%;
-    height: 70vh;
+    height: 100%;
     display: flex;
 }
 
@@ -126,13 +126,39 @@ h2 {
 }
 
 .slide {
-    width: 100vw;
     position: relative;
+    display: flex;
+    transition: 1s;
+}
+
+.slide figure {
+    width: 99vw;
     display: flex;
 }
 
-.slide img {
-    width: 800px;
+.slide figure img {
+    height: 100%;
+}
+
+.slide figure figcaption {
+    font-size: 27px;
+    width: 50%;
+}
+
+.barba-negra {
+    color: #5a5a5a;
+}
+
+.big-mom {
+    color: #d40b91;
+}
+
+.kaido {
+    color: #207cff;
+}
+
+.shanks {
+    color: #e00606;
 }
 
 .manual-navigation {
