@@ -1,14 +1,17 @@
 /* Seleção de personagens */
-.select-character{
+.select-character {
     height: 10vh;
     width: 60%;
     margin: 10vh auto;
     display: flex;
+    font-size: 20px;
     justify-content: space-around;
     background-color: #cc862b;
+    user-select: none;
+    border-radius: 10px;
 }
 
-.select-character div{
+.select-character option {
     height: 100%;
     width: 20%;
     display: flex;
@@ -21,7 +24,6 @@
 
 .barba-negra {
     color: #000000;
-    background-color: #cc862b;
 }
 
 .big-mom {
@@ -37,35 +39,37 @@
 }
 
 /* Biografia do personagem */
-.bio{
+.bio {
     width: 90%;
     margin: auto;
     background-color: #cc862b;
+    padding: 20px 0;
+    border-radius: 10px;
 }
 
-.bio h2{
+.bio h2 {
     text-align: center;
-    margin: 40px 0;
+    margin: 40px 0 10px 0;
 }
 
-.bio p{
+.bio p {
     font-size: 20px;
     width: 47%;
     text-indent: 20px;
 }
 
-.content{
+.content {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
 
-.content div{
+.content div {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
 
-.char{
+.char {
     height: 300px;
 }
