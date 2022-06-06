@@ -142,22 +142,53 @@ h2 {
 
 .slide figure figcaption {
     font-size: 27px;
-    width: 50%;
+    width: 58%;
+}
+
+.barba-branca {
+    background: url(../img/sistema/slider-bBranca.jpg) no-repeat;
+    background-size: cover;
+    text-shadow: 2px 2px 2px #000;
 }
 
 .barba-negra {
+    background: url(../img/sistema/slider-bNegra.webp) no-repeat;
+    /* background: url("") no-repeat; */
+    background-size: cover;
+    text-shadow: 2px 2px 2px #000;
+}
+
+.barba-negra p:first-child{
     color: #5a5a5a;
 }
 
 .big-mom {
+    background: url(../img/sistema/slider-bigMom.jpg) no-repeat;
+    background-size: cover;
+    text-shadow: 2px 2px 2px #000;
+}
+
+.big-mom p:first-child{
     color: #d40b91;
 }
 
 .kaido {
+    background: url(../img/sistema/slider-kaido.jpg) no-repeat;
+    background-size: cover;
+    text-shadow: 2px 2px 2px #000;
+}
+
+.kaido p:first-child{
     color: #207cff;
 }
 
 .shanks {
+    background: url(../img/sistema/slider-shanks.jpg) no-repeat;
+    background-size: cover;
+    text-shadow: 2px 2px 2px #000;
+}
+
+.shanks p:first-child{
     color: #e00606;
 }
 

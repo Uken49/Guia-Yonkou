@@ -1,3 +1,6 @@
+body {
+    background: url(../img/sistema/paper.jpg) !important;
+}
 /* Seleção de personagens */
 .select-character {
     height: 10vh;
@@ -6,7 +9,7 @@
     display: flex;
     font-size: 20px;
     justify-content: space-around;
-    background-color: #cc862b;
+    background-color: #220101;
     user-select: none;
     border-radius: 10px;
 }
@@ -24,6 +27,7 @@
 
 .barba-negra {
     color: #000000;
+    text-shadow: 2px 2px 8px #fff;
 }
 
 .big-mom {
@@ -32,6 +36,7 @@
 
 .kaido {
     color: #0b1625;
+    text-shadow: 2px 2px 8px #fff;
 }
 
 .shanks {
@@ -42,7 +47,7 @@
 .bio {
     width: 90%;
     margin: auto;
-    background-color: #cc862b;
+    background-color: #220101;
     padding: 20px 0;
     border-radius: 10px;
 }
