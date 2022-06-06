@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/cadastro.css">
+    <link rel="stylesheet" href="css/login.css">
     <link rel="stylesheet" href="css/global.css">
     <link rel="apple-touch-icon" sizes="180x180" href="img/sistema/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/sistema/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="img/sistema/favicon/favicon-16x16.png">
     <link rel="manifest" href="img/sistema/favicon/site.webmanifest">
-    <title>O Guia Yonkou - Cadastrar</title>
+    <title>O Guia Yonkou - Entrar</title>
 </head>
 
 <body>
@@ -44,68 +44,52 @@
                 </div>
             </div>
         </div>
-
+        
         <section class="container">
             <!-- Lado esquerdo do site -->
             <article class="content-image">
                 <div class="content-welcome">
                     <div>
-                        <h2>CADASTRE-SE AGORA!</h2>
-                        <p>e fique por dentro das novidades sobre os Yonkous</p>
+                        <h2>BEM-VINDO!</h2>
+                        <p>Entre para poder acessar os dados mais recentes da sua lavoura</p>
                     </div>
 
                     <div>
-                        <p class="signin">Já se cadastrou?</p>
-                        <a href="login.html">
-                            <button class="btn-login">ENTRAR</button>
+                        <p class="signup">Ainda não tem uma conta?</p>
+                        <a href="cadastro.html">
+                            <button class="btn-register">CADASTRAR</button>
                         </a>
                     </div>
                 </div>
             </article>
 
             <!-- Lado direito do site com o formulário -->
-            <article class="content-register">
-                <form class="register-container">
+            <article class="content-login">
+                <form class="login-container">
                     <div class="title">
-                        <h1>Cadastrar</h1>
+                        <h1>Entrar</h1>
                         <hr>
                     </div>
 
-                    <!-- Parte 1 do cadastro -->
                     <div class="inp-container">
-                        <div class="label-float" id="label_name">
-                            <input id="inp_name" type="text" placeholder=" " title="Insira o nome completo">
-                            <label>Nome Completo</label>
-                            <span id="warning_name"></span>
-                        </div>
-
                         <div class="label-float" id="label_email">
-                            <input id="inp_email" type="email" placeholder=" "
-                                title="Insira um email para contato e login">
+                            <input id="inp_email" type="email" placeholder=" ">
                             <label>Email</label>
                             <span id="warning_email"></span>
                         </div>
 
                         <div class="label-float" id="label_pass">
-                            <input id="inp_pass" type="password" placeholder=" "
-                                title="Senha com no mínimo 8 digitos, com número, letra e caractere especial">
+                            <input id="inp_pass"type="password" placeholder=" " required>
                             <label>Senha</label>
                             <span id="warning_pass"></span>
-                        </div>
-
-                        <div class="label-float" id="label_pass_conf">
-                            <input id="inp_pass_conf" type="password" placeholder=" "
-                                title="A senha deve ser a mesma do campo anterior">
-                            <label>Confirmar Senha</label>
-                            <span id="warning_pass_conf"></span>
+                            <img id="eye_pass" src="img/sistema/svg/eye_closed.svg" alt="">
                         </div>
                     </div>
                     <!-- Isso passa tão rápido que é impossível ver, pensando em remover ou adaptar -->
                     <figure id="loading_gif" style="display: none">
                         <img src="img/sistema/loading.gif" height="50px">
                     </figure>
-
-                    <button type="button" id="btn_next" class="btn-register">CADASTRAR</button>
+                    <button type="button" id="btn_login" class="btn-login">ENTRAR</button>
                 </form>
             </article>
         </section>
@@ -115,4 +99,4 @@
 </html>
 
 <!-- Exportando JavaScript local -->
-<script src="js/cadastro.js"></script>
+<script src="js/login.js"></script>
