@@ -1,0 +1,303 @@
+/* Importando font pirata */
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* Váriaveis globais */
+    --cor-principal: #850000;
+    --cor-secundaria: #6B0000;
+    --sideBar-width: 70px;
+}
+
+/* Estilizando barra de rolagem */
+
+/* Tamanho da barra */
+*::-webkit-scrollbar {
+    width: 12px;
+    height: 15px;
+}
+
+/* Estilo do fundo */
+*::-webkit-scrollbar-track {
+    background: white;
+}
+
+/* Estilo da barra */
+*::-webkit-scrollbar-thumb {
+    background-color: var(--cor-secundaria);
+    border-radius: 20px;
+    border: 3px solid white;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    --header-height: 90px;
+    background: #e6e6e6;
+    overflow-x: hidden;
+}
+
+button {
+    cursor: pointer;
+}
+
+header {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: var(--header-height);
+    background: linear-gradient(90deg, #850000, #6B0000, #220101);
+    z-index: 1;
+}
+
+header a:first-child  {
+    height: 100%;
+}
+header a:first-child img {
+    height: calc(100% - 5px);
+}
+
+input:focus-visible {
+    outline: none;
+}
+
+img {
+    user-select: none;
+}
+
+li {
+    list-style: none;
+}
+
+main {
+    height: 100%;
+}
+
+/* FIM - ESTILOS TAGS */
+
+
+/* INICIO - Classes genéricas */
+
+.container {
+    width: 100%;
+}
+
+.ml-5 {
+    margin: 5em;
+}
+
+/* Local onde todo o conteúdo da página estará */
+.page-content {
+    position: absolute;
+    top: calc(var(--header-height) + 10px);
+    right: 0;
+    bottom: 0;
+    left: calc(var(--sideBar-width) + 35px);
+    width: 90%;
+    border-radius: 10px;
+    background-color: #f5deb3;
+    transition: 500ms;
+}
+
+/* FIM - Classes genéricas */
+
+
+/* INICIO - HEADER (barra de navegação do topo) */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.top-bar>ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 200px;
+}
+
+.top-bar>ul li {
+    cursor: pointer;
+    height: calc(var(--header-height) * 0.45);
+}
+
+.top-bar div {
+    justify-content: center;
+    column-gap: 20px;
+    min-width: 200px;
+    max-width: 250px;
+    color: #fff;
+    background-color: var(--cor-secundaria);
+}
+
+.top-bar div:hover .drop {
+    height: 100%;
+}
+
+.top-bar div:hover .drop li {
+    opacity: 1;
+}
+
+.top-bar div img {
+    height: 17px;
+    filter: invert(100%) sepia(100%) saturate(28%) hue-rotate(48deg) brightness(106%) contrast(109%);
+}
+
+.top-bar div span {
+    user-select: none;
+}
+
+/* Parte com dropdown da navbar */
+.drop {
+    position: fixed;
+    top: var(--header-height);
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    height: 0;
+    background: #424242;
+    transition: 500ms;
+    overflow: hidden;
+}
+
+.drop li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 70px;
+    user-select: none;
+    transition: 500ms;
+    opacity: 0;
+}
+
+.drop li:hover {
+    background-color: #535353;
+}
+
+.drop li a {
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 20px;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    justify-content: flex-start;
+}
+
+.drop li a img {
+    height: 25px;
+    margin: 0 10px;
+}
+
+/* FIM - HEADER (barra de navegação do topo) */
+
+
+/* INICIO - ASIDE (barra de navegação lateral) */
+
+.side-bar {
+    align-items: flex-start;
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    width: var(--sideBar-width);
+    box-shadow: 10px 0 0 #9c0909;
+    border-left: 10px solid #424242;
+    background-color: #424242;
+    overflow-x: hidden;
+    transition: 500ms;
+}
+
+.side-bar:hover~.page-content, .side-bar:hover {
+    --sideBar-width: 210px;
+}
+
+.side-bar ul {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+    padding: 0 0 0 5px;
+    user-select: none;
+}
+
+.side-bar ul li {
+    position: relative;
+    display: flex;
+    height: 75px;
+    width: 100%;
+    padding: 0 0 0 10px;
+    margin: 15px 0;
+    border-radius: 20px 0 0 20px;
+}
+
+.side-bar ul li:hover {
+    background-color: #535353;
+}
+
+.side-bar ul li.active {
+    background-color: #9c0909;
+}
+
+.side-bar ul li a {
+    width: 100%;
+    color: #fff;
+    user-select: none;
+}
+
+/* Estilo ao clicar no elemento */
+.side-bar ul li.active a::after {
+    content: '';
+    position: absolute;
+    top: -30px;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background: #424242;
+    border-radius: 50%;
+    box-shadow: 15px 15px 0 #9c0909;
+    transition: 500ms;
+}
+
+.side-bar ul li.active a::before {
+    content: '';
+    position: absolute;
+    top: 75px;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    background: #424242;
+    border-radius: 50%;
+    box-shadow: 15px -15px 0 #9c0909;
+    transition: 500ms;
+}
+
+.side-bar ul li a figure {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.side-bar ul li a figure img {
+    height: 25px;
+    margin: 0 10px;
+    filter: invert(100%) sepia(100%) saturate(28%) hue-rotate(48deg) brightness(106%) contrast(109%);
+}
+
+.side-bar ul li a figure figcaption {
+    line-height: 60px;
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+/* FIM - ASIDE (barra de navegação lateral) */
