@@ -5,13 +5,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/jogar.css">
     <link rel="stylesheet" href="css/global.css">
     <link rel="apple-touch-icon" sizes="180x180" href="../img/sistema/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="../img/sistema/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../img/sistema/favicon/favicon-16x16.png">
     <link rel="manifest" href="../img/sistema/favicon/site.webmanifest">
-    <title>O Guia Yonkou</title>
+    <title>O Guia Yonkou - Jogar </title>
 </head>
 
 <body>
@@ -47,16 +47,16 @@
     <!-- Barra de navegação lateral -->
     <aside class="navbar side-bar">
         <ul>
-            <li class="list active">
-                <a href="#">
+            <li class="list">
+                <a href="index.html">
                     <figure>
                         <img src="../img/sistema/svg/home.svg" alt="Página inicial">
                         <figcaption>Inicio</figcaption>
                     </figure>
                 </a>
             </li>
-            <li class="list">
-                <a href="jogar.html">
+            <li class="list active">
+                <a href="#">
                     <figure>
                         <img src="../img/sistema/svg/chart.svg" alt="Página com gráficos">
                         <figcaption>Jogar</figcaption>
@@ -68,7 +68,35 @@
 
     <!-- Conteúdo da página -->
     <main class="page-content">
-        <section class=""></section>
+
+        <!-- Jogo de pular foguinho ui ui -->
+        <section class="sec-game">
+            <!-- Tela com botão para jogar -->
+            <div class="div-play">
+                <p>Jogar</p>
+                <img id="play" src="../img/game/play.svg">
+            </div>
+
+            <!-- Tela com botão para rejogar -->
+            <div class="div-play" style="display: none;">
+                <p>Jogar novamente</p>
+                <img id="retry" src="../img/game/retry.svg">
+            </div>
+
+            <!-- Tela do jogo -->
+            <article class="game-board">
+                <span id="score">0</span>
+                <img id="luffy" src="../img/game/luffy-running.webp" alt="Luffy correndo">
+                <img id="fireBall" class="fire-initial" src="../img/game/fire.webp" alt="Armadilha, fogo">
+            </article>
+        </section>
+
+        <!-- Gráfico com os melhores jogadores -->
+        <section>
+            <div class="graph">
+                <canvas id="canvas_grafico"></canvas>
+            </div>
+        </section>
     </main>
 
 </body>
@@ -76,3 +104,4 @@
 </html>
 
 <script src="js/global.js"></script>
+<script src="js/jogar.js"></script>

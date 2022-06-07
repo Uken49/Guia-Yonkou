@@ -5,7 +5,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Pirata One', cursive;
     /* Váriaveis globais */
     --cor-principal: #850000;
     --cor-secundaria: #6B0000;
@@ -58,9 +58,10 @@ header {
     z-index: 1;
 }
 
-header a:first-child  {
+header a:first-child {
     height: 100%;
 }
+
 header a:first-child img {
     height: calc(100% - 5px);
 }
@@ -236,7 +237,7 @@ main {
     display: flex;
     height: 75px;
     width: 100%;
-    padding: 0 0 0 10px;
+    padding: 0 0 0 11px;
     margin: 15px 0;
     border-radius: 20px 0 0 20px;
 }
