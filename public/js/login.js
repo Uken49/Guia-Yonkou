@@ -1,7 +1,7 @@
 // Função para exibir/esconder a senha
 const eye = document.getElementById('eye_pass')
 eye.addEventListener("click", () => {
-    let pass = constPass.value
+    let pass = constPass
 
     if (pass.type == 'password') {
         eye.src = 'img/sistema/svg/eye_open.svg'
