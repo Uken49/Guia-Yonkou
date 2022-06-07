@@ -88,6 +88,7 @@ main {
     border: 1px solid #ffffff;
     text-shadow: 2px 2px 2px var(--color-red);
     cursor: pointer;
+    user-select: none;
 }
 
 :is(.btn-login, .btn-register):hover {
@@ -179,6 +180,7 @@ label, input {
     transition: all .3s ease-out;
     -webkit-transition: all .3s ease-out;
     -moz-transition: all .3s ease-out;
+    user-select: none;
 }
 
 .label-float input:focus+label,
@@ -246,9 +248,14 @@ label, input {
     text-align: center;
 }
 
-.info-modal h2{
+.info-modal h2 {
     color: #000;
 }
+
+.info-modal p {
+    color: #000;
+}
+
 /* Responsividade */
 
 @media (max-width: 855px) {

@@ -96,7 +96,7 @@ function valName() {
     }
 }
 
-document.getElementById('btn_next').addEventListener('keyup', ()=> {
+document.getElementById('btn_next').addEventListener('click', ()=> {
     if (!valName() | !valEmail() | !passCheck() | !valPass()) {
         return false
     }
@@ -111,9 +111,9 @@ function register() {
 
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
-    let nameUser = inp_name.value;
-    let email = inp_email.value;
-    let pass = inp_pass.value;
+    let nameUser = constName.value
+    let email = constEmail.value
+    let pass = constPass.value
 
     // Enviando o valor da nova input
     fetch("/usuarios/cadastrar", {
@@ -126,22 +126,21 @@ function register() {
             // Agora vá para o arquivo routes/usuario.js
             nameServer: nameUser,
             emailServer: email,
-            passServer: pass,
-            // logoServer: logo,
+            passServer: pass
         })
     }).then(function (resposta) {
 
         console.log("resposta: ", resposta);
 
         if (resposta.ok) {
-            // Logando o usuário e mandando para o dashboard/index
+            // Logando o usuário e mandando para o restrito/index
 
             sessionStorage.EMAIL_USUARIO = email;
             sessionStorage.NOME_USUARIO = nameUser;
 
             modalSucess()
             setTimeout(() => {
-                window.location = "dashboard/index.html";
+                window.location = "restrito/index.html";
             }, 1000);
         } else {
             throw ("Houve um erro ao tentar realizar o cadastro!");
@@ -158,16 +157,12 @@ function register() {
 
 function wait() {
     let loading = document.getElementById('loading_gif')
-    btn_prev.style.opacity = '0'
-    btn_next.style.opacity = '0'
     loading.style.display = 'block'
 }
 
 function stopWait() {
     let loading = document.getElementById('loading_gif')
     loading.style.display = 'none'
-    btn_prev.style.opacity = '1'
-    btn_next.style.opacity = '1'
 }
 
 function modalSucess() {
@@ -201,3 +196,4 @@ function modalErro(phrase) {
         modal_message.style.opacity = "0"
     }, 2000);
 }
+

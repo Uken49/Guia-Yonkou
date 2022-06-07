@@ -85,6 +85,7 @@ main {
     border: 1px solid #ffffff;
     text-shadow: 2px 2px 2px var(--color-red);
     cursor: pointer;
+    user-select: none;
 }
 
 :is(.btn-login, .btn-register):hover {
@@ -254,6 +255,9 @@ label, input {
     color: #000;
 }
 
+.info-modal p{
+    color: #000;
+}
 /* Responsividade */
 
 @media (max-width: 855px) {

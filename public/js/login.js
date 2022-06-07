@@ -71,8 +71,8 @@ btn.addEventListener("click", login)
 function login() {
     wait()
 
-    let pass = constPass.value
     let email = constEmail.value
+    let pass = constPass.value
 
     if (!valEmail() | !passCheck()) {
         phrase = "Preencha todos os campos corretamente"
@@ -120,7 +120,8 @@ function login() {
 
             label_email.className = 'label-float missing'
             label_pass.className = 'label-float missing'
-
+            stopWait()
+            
             resposta.text().then(texto => {
                 console.error(texto);
             });
