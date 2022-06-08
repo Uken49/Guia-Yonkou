@@ -1,22 +1,24 @@
 // Sessões
-// document.getElementsByTagName("body")[0].addEventListener('load', () => {
-//     let email = sessionStorage.EMAIL_USUARIO;
-//     let nome = sessionStorage.NOME_USUARIO;
+window.onload = validarSessao()
 
-//     let user_name = document.getElementById("user_name");
+function validarSessao(){
+    let email = sessionStorage.EMAIL_USUARIO;
+    let nome = sessionStorage.NOME_USUARIO;
 
-//     if (email != null && nome != null) {
-//         user_name.innerHTML = nome
-//     } else {
-//         limparSessao()
-//     }
-// })
+    let span_user = document.getElementById("span_user");
 
-// document.getElementById("logout").addEventListener('click', limparSessao)
-// function limparSessao() {
-//     sessionStorage.clear();
-//     window.location = "../login.html";
-// }
+    if (email != null && nome != null) {
+        span_user.innerHTML = nome
+    } else {
+        limparSessao()
+}
+}
+
+document.getElementById("logout").addEventListener('click', limparSessao)
+function limparSessao() {
+    sessionStorage.clear();
+    window.location = "../login.html";
+}
 
 // Função para detectar o local do menu que foi clicado
 const list = document.querySelectorAll('.list')

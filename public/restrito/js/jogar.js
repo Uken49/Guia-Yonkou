@@ -26,6 +26,21 @@ function playGame() {
 
     document.getElementsByTagName("body")[0].addEventListener("keydown", jump)
     scorePoint = 1
+
+    level(2000)
+}
+
+function level(speed) {
+    setTimeout(() => {
+        fire.style.animationDuration = `${speed}ms`
+        speed -= 500
+
+        if (speed <= 500) {
+            level(2000)
+        } else {
+            level(speed)
+        }
+    }, 3000);
 }
 
 function playAgain() {
@@ -46,10 +61,14 @@ function gameOver() {
 }
 
 function jump() {
+    if (player.classList.contains("luffy")) {
+
+        return
+    }
     player.classList.add('luffy')
     setTimeout(() => {
         player.classList.remove('luffy')
-    }, 1000);
+    }, 600);
 }
 
 // Calculando a posição do fogo e do luffy para encerrar o jogo
@@ -126,8 +145,8 @@ function plotarGrafico(resposta) {
             {
                 yAxisID: 'y-pontuacao',
                 label: 'Pontuação',
-                borderColor: '#32B9CD',
-                backgroundColor: '#32b9cd8f',
+                borderColor: '#ff0000',
+                backgroundColor: '#ff000f',
                 fill: true,
                 data: []
             }
@@ -183,7 +202,7 @@ function plotarGrafico(resposta) {
                     id: 'y-pontuacao',
                     ticks: {
                         beginAtZero: true,
-                        max: 500,
+                        max: 400,
                         min: 0
                     },
                     gridLines: {
@@ -218,7 +237,7 @@ function plotarGrafico(resposta) {
 
 // Inicio - Registrar pontuação no banco
 
-function registerPoint(scorePoint){
+function registerPoint(scorePoint) {
     //Recupere o valor da nova input pelo nome do id
     //Agora vá para o método fetch logo abaixo
     const score = scorePoint
