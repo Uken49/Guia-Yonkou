@@ -22,14 +22,14 @@
 
 /* Estilo do fundo */
 *::-webkit-scrollbar-track {
-    background: white;
+    background: #fff;
 }
 
 /* Estilo da barra */
 *::-webkit-scrollbar-thumb {
     background-color: var(--cor-secundaria);
     border-radius: 20px;
-    border: 3px solid white;
+    border: 3px solid #fff;
 }
 
 a {
@@ -40,7 +40,7 @@ body {
     height: 100vh;
     width: 100%;
     --header-height: 90px;
-    background: #e6e6e6;
+    background: #d73838;
     overflow-x: hidden;
 }
 
@@ -104,7 +104,6 @@ main {
     left: calc(var(--sideBar-width) + 35px);
     width: 90%;
     border-radius: 10px;
-    background-color: #f5deb3;
     transition: 500ms;
 }
 
