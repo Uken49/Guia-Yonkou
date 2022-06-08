@@ -11,6 +11,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../img/sistema/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../img/sistema/favicon/favicon-16x16.png">
     <link rel="manifest" href="../img/sistema/favicon/site.webmanifest">
+    <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
     <title>O Guia Yonkou - Jogar </title>
 </head>
 
@@ -68,7 +69,6 @@
 
     <!-- Conteúdo da página -->
     <main class="page-content">
-
         <!-- Jogo de pular foguinho ui ui -->
         <section class="sec-game">
             <!-- Tela com botão para jogar -->
@@ -92,7 +92,8 @@
         </section>
 
         <!-- Gráfico com os melhores jogadores -->
-        <section>
+        <section class="sct-graph">
+            <h2>Top 5 Yonkous (Rank de jogadores)</h2>
             <div class="graph">
                 <canvas id="canvas_grafico"></canvas>
             </div>

@@ -9,11 +9,11 @@ CREATE TABLE Usuario(
     ,senha VARCHAR(255) NOT NULL
 );
 
-CREATE TABLE Personagem(
-	idPersonagem INT PRIMARY KEY AUTO_INCREMENT
-    ,nomePersonagem VARCHAR(45) NOT NULL
-    ,email VARCHAR(100) UNIQUE NOT NULL
-    ,senha VARCHAR(255) NOT NULL
+CREATE TABLE Partida(
+	idPartida INT PRIMARY KEY AUTO_INCREMENT
+    ,pontuacao INT NOT NULL
+    ,fkUsuario INT NOT NULL
+    ,FOREIGN KEY (fkUsuario) REFERENCES Usuario (idUsuario)
 );
 
 -- Usuário usado pela api do sistema
