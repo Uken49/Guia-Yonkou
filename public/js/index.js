@@ -74,9 +74,8 @@ const timer = (seconds) => {
 async function narrative() {
     const storyteller = document.getElementById('span-storyteller')
     const phrase = [
-        // 'Lendas, lendas', 'Vagam pelo mar', 'Irão se assustar', 'Frente a um Yonkou',
-        // 'Lendas, lendas', 'Sempre a navegar', 'Caso os encontrar', 'Saiba sua vida acabou',
-        // 'Boatos sobre esses seres', 'Saiba se espalhou', 'Governando suas ilhas', 'São os...',
+        'Lendas, lendas', 'Sempre a navegar', 'Caso os encontrar', 'Saiba sua vida acabou',
+        'Boatos sobre esses seres', 'Saiba se espalhou', 'Governando suas ilhas', 'São os...',
         'Yonkous']
 
     for (let i = 0; i < phrase.length; i++) {

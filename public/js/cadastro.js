@@ -134,14 +134,11 @@ function register() {
 
         if (resposta.ok) {
             // Logando o usuário e mandando para o restrito/index
-
             sessionStorage.EMAIL_USUARIO = email;
             sessionStorage.NOME_USUARIO = nameUser;
-
+            
             modalSucess()
-            setTimeout(() => {
-                window.location = "restrito/index.html";
-            }, 1000);
+            login(email, pass)
         } else {
             throw ("Houve um erro ao tentar realizar o cadastro!");
         }
@@ -197,3 +194,49 @@ function modalErro(phrase) {
     }, 2000);
 }
 
+function login(email, pass) {
+    console.log("FORM LOGIN: ", email);
+    console.log("FORM SENHA: ", pass);
+
+    fetch("/usuarios/autenticar", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            emailServer: email,
+            passServer: pass
+        })
+    }).then(function (resposta) {
+        console.log("ESTOU NO THEN DO login()!")
+
+        if (resposta.ok) {
+            console.log(resposta);
+
+            resposta.json().then(json => {
+                console.log(json);
+                console.log(JSON.stringify(json));
+
+                sessionStorage.ID_USUARIO = json.idUsuario;
+                sessionStorage.EMAIL_USUARIO = json.email;
+                sessionStorage.NOME_USUARIO = json.nomeUsuario;
+
+                setTimeout(() => {
+                    window.location = "restrito/index.html";
+                }, 1000);
+            });
+
+        } else {
+            console.log("Houve um erro ao tentar realizar o login!");
+
+            resposta.text().then(texto => {
+                console.error(texto);
+            });
+        }
+
+    }).catch(function (erro) {
+        console.log(erro);
+    })
+
+    return false;
+}
