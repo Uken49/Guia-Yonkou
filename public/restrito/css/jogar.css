@@ -41,6 +41,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     z-index: 1;
     top: 100px;
     left: 40%
